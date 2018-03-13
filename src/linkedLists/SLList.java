@@ -180,5 +180,8 @@ public class SLList<E> extends AbstractSLList<E> {
 	public Node<E> createNewNode() {
 		return new SNode<E>();
 	}
-
+public <T> T[] toArray(T[] array) {
+		
+		return array;
+		}
 }

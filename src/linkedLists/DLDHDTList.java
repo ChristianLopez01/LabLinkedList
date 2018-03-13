@@ -137,5 +137,8 @@ public class DLDHDTList<E> extends AbstractDLList<E> {
 	        super.finalize();
 	    }
 	}
-
+public <T> T[] toArray(T[] array) {
+		
+		return array;
+		}
 }
