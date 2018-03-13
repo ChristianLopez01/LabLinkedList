@@ -14,8 +14,8 @@ public class IndexListTester {
 	public static void main(String[] args) {	
 		listTester("Testing the singly linked list (SLList): ",
 				new LLIndexList<Integer>(new SLList<Integer>()));	
-				new SLFLList<Integer>();
-				new DLDHDTList<Integer>();
+				new LLIndexList<Integer>(new SLFLList<Integer>());
+				new LLIndexList<Integer>(new DLDHDTList<Integer>());
 	}
 		
 	private static void listTester(String msg, IndexList<Integer>  list) { 

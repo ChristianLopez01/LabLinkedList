@@ -33,7 +33,8 @@ public class SLFLList<E> extends SLList<E>
 
 	public void addNodeAfter(Node<E> target, Node<E> nuevo) {
 		// TODO Auto-generated method stub
-
+		if(length == 0)
+			this.addFirstNode(nuevo);
 		if (target == first)
 			this.addFirstNode(nuevo); 
 		if (target == last) throw new NoSuchElementException("cant add node after");
@@ -56,20 +57,31 @@ public class SLFLList<E> extends SLList<E>
 
 	public Node<E> getFirstNode() throws NoSuchElementException {
 		// TODO Auto-generated method stub
+		if(first == null)
+			throw new NoSuchElementException("When running getFirstNode(): the list is empty");
 		
-		return null;
+		
+		return first;
+		
 	}
 
 	public Node<E> getLastNode() throws NoSuchElementException {
 		// TODO Auto-generated method stub
-		return null;
+		if(first == null)
+			throw new NoSuchElementException("When running getLastNode(): the list is empty");
+		else{
+			last = first; 
+			while (((SNode<E>) last).getNext() != null)
+				last = last.getNext(); 
+			return last;
+		}
 	}
 
 	public Node<E> getNodeAfter(Node<E> target) throws NoSuchElementException {
 		// TODO Auto-generated method stubSNode<E> aNode = ((SNode<E>) target).getNext(); 
 		SNode<E> aNode = ((SNode<E>) target).getNext(); 
 		if (aNode == null)  
-			throw new NoSuchElementException("getNextNode(...) : target is the last node."); 
+			throw new NoSuchElementException("getNodeAfter() : your target is the last node."); 
 		else 
 			return aNode;
 	}
